@@ -1,0 +1,5 @@
+# Ignorar carpeta .idea (configuración de IntelliJ)
+.idea/
+
+# Ignorar carpeta de compilación de Maven
+/target/
