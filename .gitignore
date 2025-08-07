@@ -1,0 +1,7 @@
+# Ignorar carpeta .idea (configuración de IntelliJ)
+.idea/
+
+# Ignorar carpeta de compilación de Maven
+/target/
+
+actividad_del_dia.iml
