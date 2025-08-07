@@ -3,3 +3,5 @@
 
 # Ignorar carpeta de compilación de Maven
 /target/
+
+actividad_del_dia.iml
