@@ -13,15 +13,15 @@ public class MatchActivity {
 
             return ActivityTipeEnum.recreational;
 
-        } else if (weatherDescription.equals("partly cloudy")) {
+        } else if (weatherDescription.equals("Partly cloudy")) {
             return ActivityTipeEnum.social;
-        } else if (weatherDescription.equals("light rain")||weatherDescription.equals("light rain shower")||weatherDescription.equals("moderate rain")||weatherDescription.equals("patchy rain nearby")) {
+        } else if (weatherDescription.equals("Light rain")||weatherDescription.equals("Light rain shower")||weatherDescription.equals("Moderate rain")||weatherDescription.equals("Patchy rain nearby")) {
             return ActivityTipeEnum.education;
-        } else if (weatherDescription.equals("mist")||weatherDescription.equals("haze")) {
+        } else if (weatherDescription.equals("Mist")||weatherDescription.equals("Haze")) {
 
             return ActivityTipeEnum.relaxation;
 
-        } else if (weatherDescription.equals("overcast")) {
+        } else if (weatherDescription.equals("Overcast")) {
 
             return ActivityTipeEnum.busywork;
         }else {

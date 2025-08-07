@@ -4,7 +4,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import controller.MatchActivity;
-import model.Acitivity;
+import model.Activity;
 import model.Wheater;
 
 import javax.net.ssl.HttpsURLConnection;
@@ -21,9 +21,9 @@ public class ActivityService {
 
     private final String apiKey="https://bored-api.appbrewery.com/filter?type=";
 
-    public Optional<Acitivity> findActivityByTipe(Wheater wheater){
+    public Optional<Activity> findActivityByTipe(Wheater wheater){
 
-        Acitivity activity=null;
+        Activity activity=null;
         String activityInput =  matchActivity.matchingActivity(wheater).toString();
 
         try {
@@ -45,7 +45,7 @@ public class ActivityService {
                 Random random=new Random();
                 int num= random.nextInt(activityResponse.size());
                 JsonObject singleActivity=activityResponse.get(num).getAsJsonObject();
-                activity=new Acitivity(singleActivity.get("activity").getAsString());
+                activity=new Activity(singleActivity.get("activity").getAsString());
 
                 return Optional.of(activity);
 

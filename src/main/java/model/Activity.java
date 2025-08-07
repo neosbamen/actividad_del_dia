@@ -1,12 +1,10 @@
 package model;
 
-import controller.MatchActivity;
-
-public class Acitivity {
+public class Activity {
 
     private  String activity;
 
-    public Acitivity(String activity){
+    public Activity(String activity){
         this.activity=activity;
     }
 

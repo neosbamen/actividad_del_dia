@@ -1,7 +1,11 @@
 package view;
 
+import model.Activity;
+import model.Wheater;
+import service.ActivityService;
 import service.WheaterService;
 
+import java.util.Optional;
 import java.util.Scanner;
 
 public class Menu {
@@ -39,7 +43,21 @@ public class Menu {
                 WheaterService wheaterService=new WheaterService();
                 System.out.println(wheaterService.findWheater(nameCity));
             }
-            case 2 -> System.out.println("Option 2");
+            case 2 -> {
+                System.out.print("Enter the name of the city -> ");
+                String nameCity = inputUser.nextLine();
+                WheaterService wheaterService=new WheaterService();
+                ActivityService activityService=new ActivityService();
+                Optional<Wheater> valorWeather= wheaterService.findWheater(nameCity);
+                if (valorWeather.isPresent()){
+                    Wheater wheater =valorWeather.get();
+                    System.out.println(activityService.findActivityByTipe(wheater));
+                }else {
+                    throw new RuntimeException("La ciudad ingresada no esta en la api");
+                }
+
+            }
+
             case 3 -> System.out.println("\nSee you later :D");
             default ->  System.out.println("Choose some of the options");
         }
